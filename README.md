@@ -8,7 +8,7 @@
 <a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel-5.*-ff69b4.svg?style=flat-square" alt="License"></a>
 </p>
 
-<small class="text">forked from <a data-hovercard-type="repository" data-hovercard-url="/zhiru/laravel-pagseguro/hovercard" href="/zhiru/laravel-pagseguro">zhiru/laravel-pagseguro</a></small>
+<small class="text">forked from <a data-hovercard-type="repository" data-hovercard-url="/artistas/laravel-pagseguro/hovercard" href="/artistas/laravel-pagseguro">artistas/laravel-pagseguro</a></small>
 
 ## Trabalho em progresso
 
