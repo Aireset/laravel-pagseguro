@@ -10,7 +10,7 @@
 
 <small class="text">forked from <a data-hovercard-type="repository" data-hovercard-url="/zhiru/laravel-pagseguro/hovercard" href="/zhiru/laravel-pagseguro">zhiru/laravel-pagseguro</a></small>
 
-# Trabalho emc progresso
+## Trabalho em progresso
 
 Visite a [Wiki](https://github.com/zhiru/laravel-pagseguro/wiki) para verificar os detalhes de como utilizar esta Package.
 
