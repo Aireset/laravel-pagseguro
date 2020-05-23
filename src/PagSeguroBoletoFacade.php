@@ -1,13 +1,13 @@
 <?php
 
-namespace Artistas\PagSeguro;
+namespace Zhiru\PagSeguro;
 
 use Illuminate\Support\Facades\Facade;
 
-class PagSeguroFacade extends Facade
+class PagSeguroBoletoFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'pagseguro';
+        return 'pagseguro_boleto';
     }
 }

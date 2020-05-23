@@ -1,6 +1,6 @@
 <?php
 
-namespace Artistas\PagSeguro;
+namespace Zhiru\PagSeguro;
 
 class PagSeguroRecorrente extends PagSeguroClient
 {

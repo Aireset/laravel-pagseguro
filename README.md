@@ -1,18 +1,16 @@
+fork do [Artistas/laravel-pagseguro](https://github.com/aireset/laravel-pagseguro)
+
 <p align="center"><img src="https://stc.pagseguro.uol.com.br/pagseguro/i/logos/logo_pagseguro200x41.png"></p>
 
 <p align="center">
-<a href="https://www.codacy.com/app/fernando-bandeira/laravel-pagseguro?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=zhiru/laravel-pagseguro&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/2b049d7be509420c810493c828eb943d" alt="Codacy Badge"></a>
-<a href="https://packagist.org/packages/zhiru/laravel-pagseguro"><img src="https://poser.pugx.org/zhiru/laravel-pagseguro/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/zhiru/laravel-pagseguro"><img src="https://poser.pugx.org/zhiru/laravel-pagseguro/d/monthly" alt="Monthly Downloads"></a>
-<a href="https://packagist.org/packages/zhiru/laravel-pagseguro"><img src="https://poser.pugx.org/zhiru/laravel-pagseguro/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://www.codacy.com/app/fernando-bandeira/laravel-pagseguro?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aireset/laravel-pagseguro&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/2b049d7be509420c810493c828eb943d" alt="Codacy Badge"></a>
+<a href="https://packagist.org/packages/aireset/laravel-pagseguro"><img src="https://poser.pugx.org/aireset/laravel-pagseguro/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/aireset/laravel-pagseguro"><img src="https://poser.pugx.org/aireset/laravel-pagseguro/d/monthly" alt="Monthly Downloads"></a>
+<a href="https://packagist.org/packages/aireset/laravel-pagseguro"><img src="https://poser.pugx.org/aireset/laravel-pagseguro/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel-5.*-ff69b4.svg?style=flat-square" alt="License"></a>
 </p>
 
-<small class="text">forked from <a data-hovercard-type="repository" data-hovercard-url="/artistas/laravel-pagseguro/hovercard" href="/artistas/laravel-pagseguro">artistas/laravel-pagseguro</a></small>
-
-## Trabalho em progresso
-
-Visite a [Wiki](https://github.com/zhiru/laravel-pagseguro/wiki) para verificar os detalhes de como utilizar esta Package.
+Visite a [Wiki](https://github.com/aireset/laravel-pagseguro/wiki) para verificar os detalhes de como utilizar esta Package.
 
 Qualquer problema, dúvida ou sugestão sinta-se livre para abrir uma issue ou enviar um PR.
 
@@ -54,10 +52,8 @@ try {
       'paymentMethod' => 'boleto'
     ]);
 }
-catch(\Zhiru\PagSeguro\PagSeguroException $e) {
+catch(\Artistas\PagSeguro\PagSeguroException $e) {
     $e->getCode(); //codigo do erro
     $e->getMessage(); //mensagem do erro
 }
 ```
-
-#### Créditos

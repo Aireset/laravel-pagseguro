@@ -1,34 +1,35 @@
 {
-    "name": "artistas/laravel-pagseguro",
-    "description": "PagSeguro Checkout Transparente e Pagamento Recorrente(Assinaturas) no Laravel 5.*",
+    "name": "zhiru/laravel-pagseguro",
+    "description": "PagSeguro Checkout Transparente, Pagamento Recorrente (Assinaturas) e Split no Laravel 5.*",
     "type": "library",
     "license": "MIT",
     "keywords": ["laravel", "pagseguro", "transparente", "recorrente", "assinaturas"],
     "authors": [
         {
-            "name": "Fernando Henrique Bandeira",
-            "email": "fernando.bandeira94@gmail.com"
+            "name": "Felipe Almeman",
+            "email": "felipe@aireset.com.br"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Artistas\\PagSeguro\\": "src/Artistas/"
+            "Zhiru\\PagSeguro\\": "src/"
         }
     },
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.5.9",
+        "php": "^7.0",
         "illuminate/support": "^5.2|^6.0"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Artistas\\PagSeguro\\PagSeguroServiceProvider"
+                "Zhiru\\PagSeguro\\PagSeguroServiceProvider"
             ],
             "aliases": {
-                "PagSeguro": "Artistas\\PagSeguro\\PagSeguroFacade",
-                "PagSeguroRecorrente": "Artistas\\PagSeguro\\PagSeguroRecorrenteFacade",
-                "PagSeguroBoleto": "Artistas\\PagSeguro\\PagSeguroBoletoFacade"
+                "PagSeguro": "Zhiru\\PagSeguro\\PagSeguroFacade",
+                "PagSeguroSplit": "Zhiru\\PagSeguro\\PagSeguroSplitFacade",
+                "PagSeguroRecorrente": "Zhiru\\PagSeguro\\PagSeguroRecorrenteFacade",
+                "PagSeguroBoleto": "Zhiru\\PagSeguro\\PagSeguroBoletoFacade"
             }
         }
     }
