@@ -1,6 +1,6 @@
 <?php
 
-    Route::group(['namespace' => 'Zhiru\PagSeguro'], function () {
+    Route::group(['namespace' => 'Aireset\PagSeguro'], function () {
         Route::get('/pagseguro/session', 'PagSeguroController@session');
         Route::get('/pagseguro/javascript', 'PagSeguroController@javascript');
     });
