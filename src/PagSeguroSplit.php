@@ -1,6 +1,6 @@
 <?php
 
-    namespace Zhiru\PagSeguro;
+    namespace Aireset\PagSeguro;
 
     use Illuminate\Support\Arr;
 
