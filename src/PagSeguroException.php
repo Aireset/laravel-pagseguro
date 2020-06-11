@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhiru\PagSeguro;
+namespace Aireset\PagSeguro;
 
 class PagSeguroException extends \Exception
 {
