@@ -1,9 +1,9 @@
 {
-    "name": "zhiru/laravel-pagseguro",
-    "description": "PagSeguro Checkout Transparente, Pagamento Recorrente (Assinaturas) e Split no Laravel 5.*",
+    "name": "aireset/laravel-pagseguro",
+    "description": "PagSeguro Checkout Transparente, Pagamento Recorrente (Assinaturas) e Split no Laravel 5.*, 6.*, 7.*",
     "type": "library",
     "license": "MIT",
-    "keywords": ["laravel", "pagseguro", "transparente", "recorrente", "assinaturas"],
+    "keywords": ["aireset", "laravel", "pagseguro", "transparente", "recorrente", "assinaturas"],
     "authors": [
         {
             "name": "Felipe Almeman",
@@ -12,24 +12,24 @@
     ],
     "autoload": {
         "psr-4": {
-            "Zhiru\\PagSeguro\\": "src/"
+            "Aireset\\PagSeguro\\": "src/"
         }
     },
     "minimum-stability": "dev",
     "require": {
         "php": "^7.0",
-        "illuminate/support": "^5.2|^6.0"
+        "illuminate/support": "^5.2|^6.0|^7.0"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Zhiru\\PagSeguro\\PagSeguroServiceProvider"
+                "Aireset\\PagSeguro\\PagSeguroServiceProvider"
             ],
             "aliases": {
-                "PagSeguro": "Zhiru\\PagSeguro\\PagSeguroFacade",
-                "PagSeguroSplit": "Zhiru\\PagSeguro\\PagSeguroSplitFacade",
-                "PagSeguroRecorrente": "Zhiru\\PagSeguro\\PagSeguroRecorrenteFacade",
-                "PagSeguroBoleto": "Zhiru\\PagSeguro\\PagSeguroBoletoFacade"
+                "PagSeguro": "Aireset\\PagSeguro\\PagSeguroFacade",
+                "PagSeguroSplit": "Aireset\\PagSeguro\\PagSeguroSplitFacade",
+                "PagSeguroRecorrente": "Aireset\\PagSeguro\\PagSeguroRecorrenteFacade",
+                "PagSeguroBoleto": "Aireset\\PagSeguro\\PagSeguroBoletoFacade"
             }
         }
     }
