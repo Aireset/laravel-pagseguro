@@ -1,6 +1,6 @@
 <?php
 
-    namespace Zhiru\PagSeguro;
+    namespace Aireset\PagSeguro;
 
     class PagSeguroClient extends PagSeguroConfig
     {
@@ -13,7 +13,7 @@
          * @param array $headers
          *
          * @return \SimpleXMLElement
-         * @throws \Zhiru\PagSeguro\PagSeguroException
+         * @throws \Aireset\PagSeguro\PagSeguroException
          *
          */
         public function sendJsonTransaction(array $parameters, $url = null, $method = 'POST', array $headers = ['Accept: application/vnd.pagseguro.com.br.v3+json;charset=ISO-8859-1', 'Content-Type: application/json; charset=UTF-8'])
@@ -117,7 +117,7 @@
          * @param array $result
          *
          * @return mixed
-         * @throws \Zhiru\PagSeguro\PagSeguroException
+         * @throws \Aireset\PagSeguro\PagSeguroException
          *
          */
         public function formatResultJson($result)
@@ -175,7 +175,7 @@
          * @param array $headers
          *
          * @return \SimpleXMLElement
-         * @throws \Zhiru\PagSeguro\PagSeguroException
+         * @throws \Aireset\PagSeguro\PagSeguroException
          *
          */
         public function sendTransaction(array $parameters, $url = null, $post = true, array $headers = ['Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1'])
@@ -211,7 +211,7 @@
          * @param array $result
          *
          * @return \SimpleXMLElement
-         * @throws \Zhiru\PagSeguro\PagSeguroException
+         * @throws \Aireset\PagSeguro\PagSeguroException
          *
          */
         public function formatResult($result)
@@ -289,7 +289,7 @@
          * @param array $data
          * @param array $rules
          *
-         * @throws \Zhiru\PagSeguro\PagSeguroException
+         * @throws \Aireset\PagSeguro\PagSeguroException
          */
         public function validate($data, $rules)
         {
