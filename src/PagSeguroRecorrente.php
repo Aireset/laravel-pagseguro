@@ -91,42 +91,6 @@
         }
         
         /**
-         * Define os dados do plano.
-         *
-         * @param array $preApprovalRequest
-         *
-         * @return \SimpleXMLElement
-         */
-        public function sendPreApprovalRequestUpdate($preApprovalRequestCode, array $preApprovalRequest)
-        {
-            $preApprovalRequest = [
-                'email' => $this->email,
-                'token' => $this->token,
-                'amountPerPayment' => $this->sanitize($preApprovalRequest, 'amountPerPayment'),
-                'updateSubscriptions' => $this->sanitize($preApprovalRequest, 'updateSubscriptions'),
-            ];
-            
-            $this->validatePreApprovalRequestUpdate($preApprovalRequest);
-            
-            return (string)$this->sendTransaction($preApprovalRequest, $this->url['preApprovalRequest'] . "/$preApprovalRequestCode/payment");
-        }
-        
-        /**
-         * Valida os dados contidos na array de criação de um plano.
-         *
-         * @param array $preApprovalRequest
-         */
-        private function validatePreApprovalRequestUpdate(array $preApprovalRequest)
-        {
-            $rules = [
-                'amountPerPayment' => 'required|numeric|between:1.00,2000.00',
-                'updateSubscriptions' => 'required|boolean',
-            ];
-            
-            $this->validate($preApprovalRequest, $rules);
-        }
-        
-        /**
          * Valida os dados contidos na array de criação de um plano.
          *
          * @param array $preApprovalRequest

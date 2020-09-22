@@ -1,27 +1,27 @@
 <?php
-    
+
     namespace Aireset\PagSeguro;
-    
+
     use Illuminate\Support\Facades\Log;
-    
+
     class PagSeguroErrors
     {
         public static function errors($exception)
         {
             $explodeValue = explode(': ', $exception->message);
-            
+    
             if (isset($explodeValue[1])) {
                 $explodeValue = $explodeValue[1];
             } else {
                 $explodeValue = null;
             }
-            
+    
             if (isset($explodeValue[2])) {
                 $explodeValue2 = $explodeValue[2];
             } else {
                 $explodeValue2 = null;
             }
-            
+    
             switch ($exception->code) {
                 case "5003":
                     $err = "Falha de comunicação com a instituição financeira";
@@ -347,7 +347,7 @@
                 case "53142":
                     $err = "O cartão de crédito está com o token inválido";
                     break;
-                
+        
                 case "10005":
                     $err = "As contas do vendedor e do comprador não podem estar relacionadas entre si.";
                     break;
@@ -459,7 +459,7 @@
                 case "13011":
                     $err = "'formato inválido finalDate use 'aaaa-MM-ddTHH:mm' (por exemplo, 2010-01-27T17:25). | 13013 | valor inválido da página.'";
                     break;
-                
+        
                 case '13014':
                     $err = "valor inválido de maxPageResults (deve estar entre 1 e 1000).";
                     break;
@@ -547,7 +547,7 @@
                 case '17073':
                     $err = "O cartão de crédito é obrigatório.";
                     break;
-                
+        
                 case '17074':
                     $err = "O titular do cartão de crédito é obrigatório.";
                     break;
@@ -650,7 +650,7 @@
                 case '53157':
                     $err = "Valor do desconto fora do intervalo. Para o tipo DISCOUNT_AMOUNT o valor deve ser maior ou igual a 0,00 e menor ou igual ao valor máximo do pagamento correspondente.";
                     break;
-                
+        
                 case'53158':
                     $err = "O valor do desconto é obrigatório.";
                     break;
@@ -675,15 +675,15 @@
                 case'61012':
                     $err = "cnpj é inválido: $explodeValue";
                     break;
-                
+        
                 default:
                     $err = $exception->message;
             }
-            
+    
             Log::error($exception);
             Log::error($err);
             Log::error('Erro ao pagar');
-            
+    
             return $err;
         }
     }

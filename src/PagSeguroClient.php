@@ -140,10 +140,10 @@
 
             if (isset($result->error) && $result->error === true) {
                 $errors = $result->errors;
-    
+
                 $message = reset($errors);
                 $code = key($errors);
-    
+
                 $this->log->error($message, ['Retorno:' => json_encode($result)]);
     
                 $message = PagSeguroErrors::errors((object)['message' => $message, 'code' => (int)$code]);
