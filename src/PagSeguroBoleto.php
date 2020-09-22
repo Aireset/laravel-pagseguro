@@ -58,9 +58,9 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerInfo
      *
-     * @throws \Zhiru\PagSeguro\PagSeguroException
-     *
      * @return PagSeguroBoleto
+     * @throws \Aireset\PagSeguro\PagSeguroException
+     *
      */
     public function setCustomerInfo(array $customerInfo)
     {
@@ -93,7 +93,7 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerInfo
      *
-     * @throws \Zhiru\PagSeguro\PagSeguroException
+     * @throws \Aireset\PagSeguro\PagSeguroException
      */
     private function validateCustomerInfo(array $customerInfo)
     {
@@ -119,7 +119,7 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerAddress
      *
-     * @throws \Zhiru\PagSeguro\PagSeguroException
+     * @throws \Aireset\PagSeguro\PagSeguroException
      *
      * @return PagSeguroBoleto
      */
@@ -145,7 +145,7 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerAddress
      *
-     * @throws \Zhiru\PagSeguro\PagSeguroException
+     * @throws \Aireset\PagSeguro\PagSeguroException
      */
     private function validateCustomerAddress(array $customerAddress)
     {
@@ -249,7 +249,7 @@ class PagSeguroBoleto extends PagSeguroClient
     /**
      * Envia o boleto para o pagseguro.
      *
-     * @throws \Zhiru\PagSeguro\PagSeguroException
+     * @throws \Aireset\PagSeguro\PagSeguroException
      *
      * @return \SimpleXMLElement
      */
@@ -286,7 +286,7 @@ class PagSeguroBoleto extends PagSeguroClient
     /**
      * Valida os dados de pagamento.
      *
-     * @throws \Zhiru\PagSeguro\PagSeguroException
+     * @throws \Aireset\PagSeguro\PagSeguroException
      */
     private function validatePaymentSettings()
     {

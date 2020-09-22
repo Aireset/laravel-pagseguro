@@ -27,6 +27,7 @@
             ],
             "aliases": {
                 "PagSeguro": "Aireset\\PagSeguro\\PagSeguroFacade",
+                "PagSeguroErrors": "Aireset\\PagSeguro\\PagSeguroErrorsFacade",
                 "PagSeguroSplit": "Aireset\\PagSeguro\\PagSeguroSplitFacade",
                 "PagSeguroRecorrente": "Aireset\\PagSeguro\\PagSeguroRecorrenteFacade",
                 "PagSeguroBoleto": "Aireset\\PagSeguro\\PagSeguroBoletoFacade"

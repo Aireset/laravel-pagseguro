@@ -97,13 +97,14 @@
             $getInfo = curl_getinfo($curl);
             if (isset($getInfo['http_code']) && $getInfo['http_code'] == '503') {
                 $this->log->error('Serviço em manutenção.', ['Retorno:' => $result]);
-
-                throw new PagSeguroException('Serviço em manutenção.', 1000);
+                $message = PagSeguroErrors::errors((object)['message' => 'Serviço em manutenção.', 'code' => 1000]);
+                throw new PagSeguroException($message, 1000);
             }
+    
             if ($result === false) {
                 $this->log->error('Erro ao enviar a transação', ['Retorno:' => $result]);
-
-                throw new PagSeguroException(curl_error($curl), curl_errno($curl));
+                $message = PagSeguroErrors::errors((object)['message' => curl_error($curl), 'code' => curl_errno($curl)]);
+                throw new PagSeguroException($message, curl_errno($curl));
             }
 
             curl_close($curl);
@@ -124,25 +125,28 @@
         {
             if ($result === 'Unauthorized' || $result === 'Forbidden') {
                 $this->log->error('Erro ao enviar a transação', ['Retorno:' => $result]);
-
-                throw new PagSeguroException($result . ': Não foi possível estabelecer uma conexão com o PagSeguro.', 1001);
+    
+                $message = PagSeguroErrors::errors((object)['message' => $result . ': Não foi possível estabelecer uma conexão com o PagSeguro.', 'code' => 1001]);
+                throw new PagSeguroException($message, 1001);
             }
             if ($result === 'Not Found') {
                 $this->log->error('Notificação/Transação não encontrada', ['Retorno:' => $result]);
-
-                throw new PagSeguroException($result . ': Não foi possível encontrar a notificação/transação no PagSeguro.', 1002);
+    
+                $message = PagSeguroErrors::errors((object)['message' => $result . ': Não foi possível encontrar a notificação/transação no PagSeguro.', 'code' => 1002]);
+                throw new PagSeguroException($message, 1002);
             }
 
             $result = json_decode($result);
 
             if (isset($result->error) && $result->error === true) {
                 $errors = $result->errors;
-
+    
                 $message = reset($errors);
                 $code = key($errors);
-
+    
                 $this->log->error($message, ['Retorno:' => json_encode($result)]);
-
+    
+                $message = PagSeguroErrors::errors((object)['message' => $message, 'code' => (int)$code]);
                 throw new PagSeguroException($message, (int)$code);
             }
 
@@ -221,6 +225,7 @@
 
                 throw new PagSeguroException($result . ': Não foi possível estabelecer uma conexão com o PagSeguro.', 1001);
             }
+    
             if ($result === 'Not Found') {
                 $this->log->error('Notificação/Transação não encontrada', ['Retorno:' => $result]);
 
@@ -231,8 +236,8 @@
 
             if (isset($result->error) && isset($result->error->message)) {
                 $this->log->error($result->error->message, ['Retorno:' => $result]);
-
-                throw new PagSeguroException($result->error->message, (int)$result->error->code);
+                $message = PagSeguroErrors::errors((object)['message' => $result->error->message, 'code' => (int)$result->error->code]);
+                throw new PagSeguroException($message, (int)$result->error->code);
             }
 
             return $result;
@@ -298,7 +303,8 @@
             $validator = $this->validator->make($data, $rules);
 
             if ($validator->fails()) {
-                throw new PagSeguroException($validator->messages()->first(), 1003);
+                $message = PagSeguroErrors::errors((object)['message' => $validator->messages()->first(), 'code' => 1003]);
+                throw new PagSeguroException($message, 1003);
             }
         }
 
